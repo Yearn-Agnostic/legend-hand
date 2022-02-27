@@ -1,0 +1,41 @@
+{
+  "name": "diamond",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat --network hardhat test ./test/diamond-test.js",
+    "test-master": "npx hardhat test ./test/master-vault.js",
+    "test-faucet": "npx hardhat test ./test/faucet-test.js",
+    "compile": "npx hardhat compile",
+    "deploy:bscTestnet": "npx hardhat run scripts/deploy.js --network bscTestnet",
+    "deploy:bsc": "npx hardhat run scripts/deploy-diamond-bsc.js --network bsc",
+    "approve-diamondhand:bscTestnet": "npx hardhat run scripts/approveDiamondHand.js --network bscTestnet",
+    "deploy-faucet:bscTestnet": "npx hardhat run scripts/deployFaucet.js --network bscTestnet",
+    "deploy:rinkeby": "npx hardhat run scripts/deployRinkeby.js --network rinkeby",
+    "verify:bscTestnet": "npx hardhat verify --network bscTestnet 0x1Bfe9698D62AC5334C09eFa476C220fB16c571Be 0x208e4E53f9872bC3636790dBDAD2E7B983894C2a 0xeFfe75B1574Bdd2FE0Bc955b57e4f82A2BAD6bF9",
+    "verify:bsc": "npx hardhat verify --network bsc 0x2Fd6ed8B7A581B23582eb91ed9238Dd5A681A4f0 0x916792fd41855914ba4b71285c8a05b866f0618b 0xb8E2624d3F5329D701d2aa99f2b9562399Ac4488",
+    "verify:yfiag-bscTestnet": "npx hardhat verify --network bscTestnet 0x208e4E53f9872bC3636790dBDAD2E7B983894C2a",
+    "verify:rinkeby": "npx hardhat verify --network rinkeby 0xD6771E7CD1Da9076b99f24C4Bade79A951a56963 0xfddaDa8799cbE2BA4615Cc0Dd0E847084C7F61ea 0xeFfe75B1574Bdd2FE0Bc955b57e4f82A2BAD6bF9"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.2.0",
+    "@openzeppelin/contracts-ethereum-package": "^3.0.0",
+    "@truffle/hdwallet-provider": "^1.4.2",
+    "dotenv": "^10.0.0",
+    "@pancakeswap/pancake-swap-lib": "^0.0.1"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.7",
+    "@nomiclabs/hardhat-ganache": "^2.0.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.1",
+    "hardhat": "^2.6.8"
+  }
+}
